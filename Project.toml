@@ -1,0 +1,8 @@
+name = "AdventOfCode2017"
+uuid = "104b29ac-56bc-4a2c-8619-269c371ccd6d"
+authors = ["Alexander Seiler <seileralex@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
