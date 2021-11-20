@@ -4,7 +4,6 @@ using AdventOfCode2017
 
 function day09(input::String = readInput(joinpath(@__DIR__, "..", "data", "day09.txt")))
     cleaned_input, part2 = clean_garbage(rstrip(input))
-    # clean_garbage(rstrip(input))
     return [part1(cleaned_input), part2]
 end
 
