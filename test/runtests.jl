@@ -44,3 +44,7 @@ end
 @testset "Day 10" begin
     @test AdventOfCode2017.Day10.day10() == [20056, "d9a7de4a809c56bf3a9465cb84392c8e"]
 end
+
+@testset "Day 11" begin
+    @test AdventOfCode2017.Day11.day11() == [834, 1569]
+end
