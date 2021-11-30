@@ -64,3 +64,7 @@ end
 @testset "Day 15" begin
     @test AdventOfCode2017.Day15.day15() == [650, 336]
 end
+
+@testset "Day 16" begin
+    @test AdventOfCode2017.Day16.day16() == ["ceijbfoamgkdnlph", "pnhajoekigcbflmd"]
+end
