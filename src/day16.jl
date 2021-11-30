@@ -24,13 +24,8 @@ function day16(input::String = readInput(joinpath(@__DIR__, "..", "data", "day16
     return [part1, part2]
 end
 
-function _to_int(c::Char)
-    Int(c) - 96
-end
-
-function _to_char(i::Int)
-    Char(i + 96)
-end
+_to_int(c::Char) = Int(c) - 96
+_to_char(i::Int) = Char(i + 96)
 
 function generate_moves(input::String)
     moves = []
