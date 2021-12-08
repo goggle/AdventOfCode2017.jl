@@ -68,3 +68,8 @@ end
 @testset "Day 16" begin
     @test AdventOfCode2017.Day16.day16() == ["ceijbfoamgkdnlph", "pnhajoekigcbflmd"]
 end
+
+@testset "Day 17" begin
+    @test AdventOfCode2017.Day17.day17("3\n") == [638, 1222153]
+    @test AdventOfCode2017.Day17.day17() == [1914, 41797835]
+end
