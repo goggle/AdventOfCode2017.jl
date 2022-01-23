@@ -98,3 +98,6 @@ end
     @test AdventOfCode2017.Day19.day19() == ["EOCZQMURF", 16312]
 end
 
+@testset "Day 20" begin
+    @test AdventOfCode2017.Day20.day20() == [300, 502]
+end
