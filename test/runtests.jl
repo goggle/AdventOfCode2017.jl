@@ -107,3 +107,16 @@ end
              ".#./..#/### => #..#/..../..../#..#\n"
     @test AdventOfCode2017.Day21.day21() == [188, 2758764]
 end
+
+@testset "Day 24" begin
+    sample = "0/2\n" *
+             "2/2\n" *
+             "2/3\n" *
+             "3/4\n" *
+             "3/5\n" *
+             "0/1\n" *
+             "10/1\n" *
+             "9/10\n"
+    @test AdventOfCode2017.Day24.day24(sample) == [31, 19]
+    @test AdventOfCode2017.Day24.day24() == [2006, 1994]
+end
