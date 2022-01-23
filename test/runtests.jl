@@ -94,3 +94,7 @@ end
               "rcv d\n"
 end
 
+@testset "Day 19" begin
+    @test AdventOfCode2017.Day19.day19() == ["EOCZQMURF", 16312]
+end
+
