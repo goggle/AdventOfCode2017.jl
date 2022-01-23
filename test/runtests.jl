@@ -101,3 +101,9 @@ end
 @testset "Day 20" begin
     @test AdventOfCode2017.Day20.day20() == [300, 502]
 end
+
+@testset "Day 21" begin
+    sample = "../.# => ##./#../...\n" *
+             ".#./..#/### => #..#/..../..../#..#\n"
+    @test AdventOfCode2017.Day21.day21() == [188, 2758764]
+end
