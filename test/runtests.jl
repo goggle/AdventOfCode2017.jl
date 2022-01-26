@@ -112,6 +112,10 @@ end
     @test AdventOfCode2017.Day22.day22() == [5433, 2512599]
 end
 
+@testset "Day 23" begin
+    @test AdventOfCode2017.Day23.day23() == [4225, 905]
+end
+
 @testset "Day 24" begin
     sample = "0/2\n" *
              "2/2\n" *
