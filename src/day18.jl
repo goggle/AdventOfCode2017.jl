@@ -48,23 +48,21 @@ function parse_input(input)
         elseif elems[1] == "rcv"
             push!(instructions, (rcv, (elems[2][1], '0')))
         elseif elems[1] == "jgz"
-            arg = tryparse(Int, elems[3])
-            if arg === nothing
-                push!(instructions, (jgz, (elems[2][1], elems[3][1])))
-            else
-                push!(instructions, (jgz, (elems[2][1], arg)))
+            arg1 = tryparse(Int, elems[2])
+            arg2 = tryparse(Int, elems[3])
+            if arg1 === nothing
+                arg1 = elems[2][1]
             end
+            if arg2 === nothing
+                arg2 = elems[3][1]
+            end
+            push!(instructions, (jgz, (arg1, arg2)))
         end
     end
     return instructions
 end
 
 function snd(registers::DefaultDict{Char,Int}, lastsound::Vector{Int}, pc::Int, x::Char, ::Char)
-    # if isempty(lastsound)
-    #     push!(lastsound, registers[x])
-    # else
-    #     lastsound[end] = registers[x]
-    # end
     push!(lastsound, registers[x])
     return pc + 1
 end
@@ -124,6 +122,11 @@ function jgz(registers::DefaultDict{Char,Int}, lastsound::Vector{Int}, pc::Int, 
     return pc + 1
 end
 
+function jgz(registers::DefaultDict{Char,Int}, lastsound::Vector{Int}, pc::Int, x::Int, y::Int)
+    x > 0 && return pc + y
+    return pc + 1
+end
+
 function run_part1(instructions)
     registers = DefaultDict{Char,Int}(0)
     lastsound = Vector{Int}()
@@ -142,15 +145,13 @@ function run_part2(instructions)
     lastsound = (Vector{Int}(), Vector{Int}())
     pc = [1, 1]
     while true
-        # println(registers)
-        # println(lastsound)
         for i ∈ 1:2
             while instructions[pc[i]][1] != rcv
                 if i == 2 && instructions[pc[i]][1] == snd
                     p2 += 1
                 end
                 pc[i] = instructions[pc[i]][1](registers[i], lastsound[i], pc[i], instructions[pc[i]][2]...)
-            end            
+            end
         end
         if all(a -> isempty(a), lastsound)
             return p2

@@ -92,6 +92,9 @@ end
               "rcv b\n" *
               "rcv c\n" *
               "rcv d\n"
+    @test AdventOfCode2017.Day18.day18(sample) == [4, 1]
+    @test AdventOfCode2017.Day18.day18(sample2) == [0, 3]
+    @test AdventOfCode2017.Day18.day18() == [1187, 5969]
 end
 
 @testset "Day 19" begin
